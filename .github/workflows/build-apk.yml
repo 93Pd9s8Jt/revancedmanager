@@ -51,6 +51,10 @@ jobs:
         run: |
           $ANDROID_SDK_ROOT/cmdline-tools/latest/bin/sdkmanager "platform-tools" "platforms;android-30" "build-tools;30.0.3"
 
+      # Make gradlew executable
+      - name: Make gradlew executable
+        run: chmod +x ./gradlew
+
       # Build the project
       - name: Build APK
         run: ./gradlew assembleRelease
